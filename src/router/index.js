@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import About from '../views/About.vue'
+import Countries from '../views/Countries.vue'
+import TradeBlocs from '../views/TradeBlocs.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,16 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/countries',
+    name: 'Countries',
+    component: Countries
+  },
+  {
+    path: '/trade-blocs',
+    name: 'TradeBlocs',
+    component: TradeBlocs,
   }
 ]
 

@@ -237,6 +237,13 @@ export default {
 
       if(validator.hasErrors()) {
         this.errors = validator.getErrors();
+        this.$swal({
+          icon: 'error',
+          title: 'Erro',
+          text: 'Preencha todos os campos corretamente',
+          type: 'error',
+          confirmButtonText: 'Ok',
+        });
         return;
       }
 
@@ -279,9 +286,10 @@ export default {
 <style lang="scss" scoped>
   form {
     margin: 20px auto;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 75vw;
     max-width: 1000px;
@@ -291,7 +299,7 @@ export default {
 
     button {
       width: 100%;
-      height: 50px;
+      padding: 10px;
       border: none;
       border-radius: 0.25em;
       background-color: #0aeb83;

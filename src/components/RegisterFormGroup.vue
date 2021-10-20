@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <label>
-          {{ label }}:
+          <div v-if="label">{{ label }}:</div>
           <div>
             <the-mask
               v-if="masked"
@@ -46,6 +46,7 @@ export default {
   props: {
       masked: {
           type: Boolean,
+          required: false,
           default: false
       },
       mask: {
@@ -55,11 +56,13 @@ export default {
       },
       money: {
         type: Boolean,
+        required: false,
         default: false
       },
       label: {
           type: String,
-          required: true
+          required: false,
+          default: ''
       },
       type: {
           type: String,
