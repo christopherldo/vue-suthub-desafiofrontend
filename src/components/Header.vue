@@ -1,9 +1,9 @@
 .<template>
   <header>
     <div class="logo">
-      <a href="/">
+      <router-link to="/">
         <img src="../assets/logo.png" alt="Logo">
-      </a>
+      </router-link>
     </div>
     <nav class="links">
       <router-link to="/">Home</router-link>
@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
   header {
+    width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -30,6 +31,7 @@ export default {
     background-color: #111;
     height: 80px;
     border-bottom: 1px solid #444;
+    position: fixed;
 
     .logo {
       img {
@@ -40,6 +42,9 @@ export default {
     }
 
     nav {
+      display: flex;
+      align-items: center;
+
       &:hover {
         a {
           opacity: 0.5;
@@ -59,10 +64,10 @@ export default {
         color: #fff;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: Arial, Helvetica, sans-serif;
         border-bottom: 1px solid transparent;
         padding: 30px 0;
         transition: all 0.3s ease-in-out;
+        letter-spacing: 1px;
 
         &:not(:last-child) {
           margin-right: 1rem;

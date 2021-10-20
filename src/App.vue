@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -25,5 +27,10 @@ export default {
 
 body {
   background-color: #222;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  padding-top: 80px;
 }
 </style>
