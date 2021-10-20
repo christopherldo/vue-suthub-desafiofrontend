@@ -1,9 +1,9 @@
 <template>
   <div class="modal" @click="closeModal">
-      <div class="modal-area" @click.stop="">
-        <div class="modal-close" @click="closeModal">
+      <div class="modal-close" @click="closeModal">
           <img src="@/assets/times-solid.svg" alt="Close Modal" height="25">
-        </div>
+      </div>
+      <div class="modal-area" @click.stop="">
         <div v-for="objectKey in Object.keys(data)" :key="objectKey" class="form-data-area">
           <div v-if="data[objectKey]">
             <h2>{{ objectKey }}:</h2>
@@ -44,8 +44,28 @@ export default {
     background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center; 
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #fff;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      z-index: 1;
+      cursor: pointer;
+
+      img:hover {
+        opacity: 0.5;
+      }
+    }
 
     .modal-area {
       position: relative;
@@ -59,15 +79,8 @@ export default {
       display: flex;
       flex-direction: column;
 
-      .modal-close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        cursor: pointer;
-
-        img:hover {
-          opacity: 0.5;
-        }
+      @media (max-width: 500px) {
+        min-width: 90%;
       }
 
       .form-data-area {
