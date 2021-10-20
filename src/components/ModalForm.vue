@@ -50,20 +50,19 @@ export default {
     .modal-area {
       position: relative;
       min-width: 500px;
-      min-height: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
       background: #fff;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
 
       .modal-close {
         position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
+        top: 15px;
+        right: 15px;
         cursor: pointer;
 
         img:hover {
