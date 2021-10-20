@@ -21,11 +21,6 @@ const routes = [
     component: Register
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
     path: '/countries',
     name: 'Countries',
     component: Countries
@@ -34,6 +29,11 @@ const routes = [
     path: '/trade-blocs',
     name: 'TradeBlocs',
     component: TradeBlocs,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 

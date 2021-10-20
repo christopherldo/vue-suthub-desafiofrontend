@@ -2,8 +2,8 @@
   <main class="home">
     <div class="home--left">
       <h1>Boas-vindas</h1>
-      <h2>Escolha uma ação nos botões ao lado</h2>
-      <img src="@/assets/undraw_good_doggy_4wfq.svg" alt="Pet Welcome Draw" height="300" loading="lazy">
+      <h2>Escolha uma ação nos botões</h2>
+      <img src="@/assets/undraw_good_doggy_4wfq.svg" alt="Pet Welcome Draw" height="300" width="421" loading="lazy">
     </div>
     <div class="home--right">
       <HomeNavLink desc="Cadastre o seu pet" route="register" />
@@ -33,7 +33,12 @@ export default {
   align-items: center;
   padding-right: 20px;
   padding-left: 20px;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .home--left {
     flex: 1;
@@ -63,6 +68,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1100px) {
+      width: 100%;
+    }
   }
 }
 </style>

@@ -297,6 +297,10 @@ export default {
     border-radius: 0.25em;
     padding: 20px;
 
+    @media (max-width: 768px) {
+      max-height: calc(100vh - 190px);
+    }
+
     button {
       width: 100%;
       padding: 10px;

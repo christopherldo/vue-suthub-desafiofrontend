@@ -33,4 +33,10 @@ body {
 main {
   padding-top: 80px;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 143px;
+  }
+}
 </style>

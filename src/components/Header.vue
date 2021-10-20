@@ -2,7 +2,7 @@
   <header>
     <div class="logo">
       <router-link to="/">
-        <img src="../assets/logo.png" alt="Logo">
+        <img src="../assets/logo.png" alt="Logo" width="250" height="38">
       </router-link>
     </div>
     <nav class="links">
@@ -33,9 +33,14 @@ export default {
     border-bottom: 1px solid #444;
     position: fixed;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      height: auto;
+      padding-bottom: 0;
+    }
+
     .logo {
       img {
-        width: 250px;
         cursor: pointer;
         filter: drop-shadow(1px 1px 0px #666);
       }

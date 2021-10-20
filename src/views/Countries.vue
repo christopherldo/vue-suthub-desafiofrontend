@@ -7,12 +7,13 @@
         @input="searchBar = $event"
         :error="searchBarError"
       />
+      
+      <Loading v-if="loading"/>
       <div v-if="countries.length" class="country--area">
           <CountryCard
             v-for="(country, index) in countries"
             :key="index"
             :country="country"
-            @click="selectCountry(country)"
             @goToCountryCode="goToCountryCode"
             @fetchSameLanguageCountries="fetchSameLanguageCountries"
           />
@@ -24,6 +25,7 @@
 <script>
 import RegisterFormGroup from '@/components/RegisterFormGroup.vue';
 import CountryCard from '@/components/CountryCard.vue';
+import Loading from '@/components/Loading.vue';
 
 import Api from '@/services/countries';
 
@@ -31,48 +33,54 @@ export default {
   name: 'Countries',
   components: {
     RegisterFormGroup,
-    CountryCard
+    CountryCard,
+    Loading
   },
   data () {
     return {
-      country: {},
       countries: [],
       searchBar: '',
       searchBarError: '',
       errors: {},
+      loading: true,
     };
   },
   methods: {
     resetCountry () {
-      this.country = {};
       this.countries = [];
     },
     async searchCountry(value) {
       this.resetCountry();
+      this.loading = true;
       try {
         const response = await Api.getCountryByName(value);
         this.countries = response.data;
       } catch (error) {
         this.searchBarError = error.message;
       }
+      this.loading = false;
     },
     async goToCountryCode(country) {
       this.resetCountry();
+      this.loading = true;
       try {
         const response = await Api.getCountryByCode(country);
         this.countries = response.data;
       } catch (error) {
         this.searchBarError = error.message;
       }
+      this.loading = false;
     },
     async fetchSameLanguageCountries(language) {
       this.resetCountry();
+      this.loading = true;
       try {
         const response = await Api.getCountriesByLanguage(language);
         this.countries = response.data;
       } catch (error) {
         this.searchBarError = error.message;
       }
+      this.loading = false;
     }
   },
   watch: {
@@ -104,6 +112,10 @@ export default {
     border-radius: 0.25em;
     padding: 20px;
 
+    @media (max-width: 768px) {
+      min-height: calc(100vh - 190px);
+    }
+
     .country--area {
       flex: 1;
       max-height: calc(100vh - 225px);
@@ -112,6 +124,10 @@ export default {
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+
+      @media (max-width: 768px) {
+        max-height: calc(100vh - 300px);
+      }
     }
   }
 </style>
