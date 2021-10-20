@@ -161,6 +161,7 @@ export default {
 
       .detail {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         font-size: 16px;
         margin-bottom: 10px;
