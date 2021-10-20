@@ -107,7 +107,7 @@ export default {
     align-items: center;
     max-width: 1000px;
     min-height: calc(100vh - 120px);
-    width: 75vw;
+    width: 90vw;
     border: 1px solid #ccc;
     border-radius: 0.25em;
     padding: 20px;

@@ -132,13 +132,13 @@ export default {
     align-items: center;
     max-width: 1000px;
     min-height: calc(100vh - 120px);
-    width: 75vw;
+    width: 90vw;
     border: 1px solid #ccc;
     border-radius: 0.25em;
     padding: 20px;
 
     @media (max-width: 768px) {
-      max-height: calc(100vh - 200px);
+      min-height: calc(100vh - 190px);
     }
 
     .country--area {
@@ -151,7 +151,7 @@ export default {
       width: 100%;
 
       @media (max-width: 768px) {
-        max-height: calc(100vh - 300px);
+        max-height: calc(100vh - 320px);
       }
     }
   }

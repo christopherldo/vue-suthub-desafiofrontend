@@ -137,6 +137,10 @@ export default {
     border-radius: 5px;
     margin: 10px;
 
+    @media (max-width: 470px) {
+      min-width: unset; 
+    }
+
     .title {
       width: 100%;
       padding-bottom: 10px;
@@ -166,12 +170,22 @@ export default {
         font-size: 16px;
         margin-bottom: 10px;
 
+        @media (max-width: 470px) {
+          flex-direction: column;
+          text-align: center;
+        }
+
         .label {
           font-weight: bold;
         }
         
         .value {
           margin-left: 5px;
+
+          @media (max-width: 470px) {
+            margin-left: 0;
+            margin-top: 2px;
+          }
 
           &.link {
             cursor: pointer;

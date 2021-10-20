@@ -68,6 +68,7 @@ export default {
         font-weight: bold;
         color: #fff;
         text-decoration: none;
+        text-align: center;
         text-transform: uppercase;
         border-bottom: 1px solid transparent;
         padding: 30px 0;
@@ -81,6 +82,14 @@ export default {
         &.router-link-exact-active {
           color: #03d5c7;
           border-color: #03d5c7;
+        }
+        
+        @media (max-width: 570px) {
+          font-size: 0.5rem;
+
+          &:not(:last-child) {
+            margin-right: 0.5rem;
+          }
         }
       }
     }

@@ -51,14 +51,27 @@ export default {
     h1 {
       font-size: 4rem;
       margin-bottom: 30px;
+
+      @media (max-width: 470px) {
+        font-size: 3rem;
+      }
     }
     
     h2 {
       font-size: 2rem;
+      text-align: center;
+
+      @media (max-width: 470px) {
+        font-size: 1.5rem;
+      }
     }
 
     img {
       margin-top: 30px;
+
+      @media (max-width: 470px) {
+        width: 90%;
+      }
     }
   }
 

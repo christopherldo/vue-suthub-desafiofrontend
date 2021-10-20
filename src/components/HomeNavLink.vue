@@ -40,5 +40,9 @@ export default {
       background: #fff;
       color: #000;
     }
+
+    @media (max-width: 1100px) {
+      width: 90%;
+    }
   }
 </style>

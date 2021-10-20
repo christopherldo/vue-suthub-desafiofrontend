@@ -29,9 +29,16 @@ export default {
       min-height: calc(100vh - 145px);
     }
 
+    img {
+      @media (max-width: 470px) {
+        width: 300px;
+      }
+    }
+
     h1 {
       font-size: 18px;
       margin: 20px;
+      text-align: center;
     }
 
     a {

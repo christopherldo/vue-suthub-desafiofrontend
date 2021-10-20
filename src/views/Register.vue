@@ -291,7 +291,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75vw;
+    width: 90vw;
     max-width: 1000px;
     border: 1px solid #ccc;
     border-radius: 0.25em;
